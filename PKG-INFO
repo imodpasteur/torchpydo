@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: lunatic-python
+Version: 1.0
+Summary: Two-way bridge between Python/Numpy and Lua/Torch
+Home-page: http://labix.org/lunatic-python
+Author: Wei OUYANG & Jean-michel ARBONA
+Author-email: wei.ouyang@cri-paris.org
+License: LGPLv3
+Description: Torchpydo is a two-way bridge between Python/Numpy and Lua/Torch, allowing use using Torch packages(nn, rnn etc.) with numpy inside python. This is a project inspired by lunatic-python and based on lunatic-python.
+        
+Platform: UNKNOWN

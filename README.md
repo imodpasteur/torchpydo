@@ -17,7 +17,8 @@ lua.execute('greeting="hello world from lua"')
 print(greeting)
 
 
-# or if you don't want to mess the python global variables, you can skip the previous line, but you need to access lua global variables through lua.globals(). 
+# or if you don't want to mess the python global variables, you can skip the previous line, 
+# but you need to access lua global variables through lua.globals(). 
 
 # Note that if you do this, all the following code should change acorrdingly.
 

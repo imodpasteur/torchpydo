@@ -1,6 +1,8 @@
 # Torchpydo
 
-Torchpydo is a two-way bridge between Python/Numpy and Lua/Torch, allowing use using Torch packages(nn, rnn etc.) with numpy inside python. This is a project inspired by lunatic-python and based on lunatic-python.
+Torchpydo is a two-way bridge between Python/Numpy and Lua/Torch, allowing use using Torch packages(nn, rnn etc.) with numpy inside python.
+
+This is a project inspired by lunatic-python and based on lunatic-python.
 
 # Getting Start
 
@@ -9,8 +11,20 @@ Torchpydo is a two-way bridge between Python/Numpy and Lua/Torch, allowing use u
 ``` python
 import torchpydo as lua
 
-# set the python globals to lua, so you can update all lua globals into python
+# set the python globals() to lua, so you can update all lua global variables into python by default
 lua.set_globals(globals())
+lua.execute('greeting="hello world from lua"')
+print(greeting)
+
+
+# or if you don't want to mess the python global variables, you can skip the previous line, but you need to access lua global variables through lua.globals(). 
+
+# Note that if you do this, all the following code should change acorrdingly.
+
+lg = lua.globals()
+lua.execute('greeting="hello world from lua"')
+print(lg.greeting)
+
 ```
 
 ## play with torch

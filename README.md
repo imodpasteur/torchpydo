@@ -87,11 +87,8 @@ print(res.size(res))
 ``` python
 mlp = nn.Sequential()
 
-# bootstrap the add function to use add without passing self as the first arugment
-lua.bs(mlp,'add')
-
 module = nn.Linear(10, 5)
-mlp.add(module)
+mlp.add(mlp, module)
 
 print(module.weight)
 print(module.bias)
@@ -106,6 +103,14 @@ y = mlp.forward(mlp, x)
 print(y)
 
 ```
+Or, you can use lua.bs, to bootstrap the add function.
+
+``` python
+# bootstrap the add function
+lua.bs(mlp,'add')
+# now we can use add without passing self as the first arugment
+mlp.add(module)
+```
 
 ## build another model and training it
 
@@ -114,10 +119,9 @@ Train a model to perform XOR operation.
 ``` python
 lua.require("nn")
 mlp = nn.Sequential()
-lua.bs(mlp,'add')
-mlp.add(nn.Linear(2, 20)) # 2 input nodes, 20 hidden nodes
-mlp.add(nn.Tanh())
-mlp.add(nn.Linear(20, 1)) # 1 output nodes
+mlp.add(mlp, nn.Linear(2, 20)) # 2 input nodes, 20 hidden nodes
+mlp.add(mlp, nn.Tanh())
+mlp.add(mlp, nn.Linear(20, 1)) # 1 output nodes
 
 criterion = nn.MSECriterion() 
 

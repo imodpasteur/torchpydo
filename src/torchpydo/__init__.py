@@ -1,5 +1,6 @@
+import os
 import ctypes
-lualib = ctypes.CDLL("/home/wei/torch/install/lib/libluajit.so", mode=ctypes.RTLD_GLOBAL)
+lualib = ctypes.CDLL(os.path.expanduser("~") + "/torch/install/lib/libluajit.so", mode=ctypes.RTLD_GLOBAL)
 import lua
 from lua import *
 

@@ -61,10 +61,7 @@ x = torch.Tensor(10) #10 inputs
 
 # pass self to the function
 y = mlp.forward(mlp, x)
-
-# or bootstrap the forward function and use it with the python way
-lua.bs(mlp,'forward')
-y = mlp.forward(x)
+print(y)
 
 ```
 

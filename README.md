@@ -13,7 +13,7 @@ import torchpydo as lua
 
 # set the python globals() to lua, so you can update all lua global variables into python by default
 lua.set_globals(globals())
-lua.execute('greeting="hello world from lua"')
+lua.execute(' greeting = "hello world from torchpydo" ')
 print(greeting)
 
 
@@ -23,7 +23,7 @@ print(greeting)
 # Note that if you do this, all the following code should change acorrdingly.
 
 lg = lua.globals()
-lua.execute('greeting="hello world from lua"')
+lua.execute(' greeting = "hello world from torchpydo" ')
 print(lg.greeting)
 
 ```
